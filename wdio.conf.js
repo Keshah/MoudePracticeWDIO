@@ -55,7 +55,7 @@ exports.config = {
           'goog:chromeOptions': {
             args: [
               '--start-fullscreen',
-              '--headless=new',     
+              //'--headless=new',     
               '--disable-gpu',
               '--no-sandbox',
               '--disable-dev-shm-usage', 
@@ -71,13 +71,13 @@ exports.config = {
           },
           maxInstances: 2
         },
-        {
-          browserName: 'firefox',
-          'moz:firefoxOptions': {
-            args: ['--headless', '--start-fullscreen', '--disable-gpu', '--no-sandbox', '--disable-blink-features=AutomationControlled']
-          },
-          maxInstances: 2
-        }
+       // {
+       //   browserName: 'firefox',
+       //   'moz:firefoxOptions': {
+       //     args: ['--headless', '--start-fullscreen', '--disable-gpu', '--no-sandbox', '--disable-blink-features=AutomationControlled']
+       //   },
+       //   maxInstances: 2
+       // }
         ],
 
 
@@ -158,7 +158,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        retries: 2
+        retries: 0
       },
 
     //
@@ -169,6 +169,10 @@ exports.config = {
     // it and to build services around it. You can either apply a single function or an array of
     // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
     // resolved to continue.
+    before: async function () {
+      const chai = require('chai');
+      chai.should(); // Инициализация should глобально
+  },
     /**
      * Gets executed once before all workers get launched.
      * @param {object} config wdio configuration object
@@ -240,6 +244,8 @@ exports.config = {
     // beforeHook: function (test, context, hookName) {
     // },
     /**
+     * 
+     * 
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
@@ -257,7 +263,6 @@ exports.config = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
-
 
     /**
      * Hook that gets executed after the suite has ended

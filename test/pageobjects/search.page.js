@@ -10,7 +10,10 @@ class SearchPage {
         await this.searchInput.setValue(searchValue);
       }
       
-      
+      async getSearchInputValue() {
+        const inputField = await $('input[id="search"]');
+        return await inputField.getValue();
+    }
 
       async pressEnter() {
        await browser.keys('Enter');

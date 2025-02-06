@@ -17,7 +17,7 @@ class BoardPage {
         const cartBtn = await $('a[href="https://www.htfr.com/checkout/cart/"]');
         await expect(cartBtn).toBeDisplayed();
         await cartBtn.click()
-        await browser.pause(5000)
+        await browser.pause(1000)
         const EditCartBtn = await $("//span[text()='View and Edit Cart']");
 
         if (!(await EditCartBtn.isExisting())) {
@@ -26,6 +26,11 @@ class BoardPage {
         
         await EditCartBtn.waitForDisplayed();
         await EditCartBtn.click();
+    }
+
+    async isItemInCart() {
+        const cartItem = await $('tbody.cart.item');
+        return cartItem.isDisplayed();
     }
       
     async DeleteCartItem() {
