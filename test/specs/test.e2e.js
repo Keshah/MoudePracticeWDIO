@@ -7,12 +7,8 @@ const { browser } = require('@wdio/globals')
 const LoginPage = require('../pageobjects/login.page')
 const RegisterPage = require('../pageobjects/register.page')
 const EditUser = require('../pageobjects/profile.page')
-const BoardPage = require('../pageobjects/Cart.page')
 const SearchPage = require('../pageobjects/search.page')
 const MainPage = require('../pageobjects/page')
-const listPage = require('../pageobjects/list.page')
-const CreateCardPage = require('../pageobjects/checkout.page')
-const WorkspacePage = require('../pageobjects/filter.page')
 
 //    describe('1. Sign up for HTFR', () => {
 //        it('should register with valid credentials', async () => {
