@@ -58,18 +58,18 @@ const WorkspacePage = require('../pageobjects/filter.page')
 //   });
 // });
 
- describe('5. Search for a product', () => {
-         it('should search an item by input', async () => {
-             await MainPage.open()
-             await LoginPage.clickOnLogIn()
-             await LoginPage.login("keshah717@gmail.com", "Password2222")
-             await SearchPage.setSearchInput("vinyl")
-             const searchInputValue = await SearchPage.getSearchInputValue();         
-             searchInputValue.should.equal('vinyl');                                  // chai.should to check entered value
-             await SearchPage.pressEnter()
-             await browser.pause(5000)
-         })
-     })
+  describe('5. Search for a product', () => {
+          it('should search an item by input', async () => {
+              await MainPage.open()
+              await LoginPage.clickOnLogIn()
+              await LoginPage.login("keshah717@gmail.com", "Password2222")
+              await SearchPage.setSearchInput("vinyl")
+              const searchInputValue = await SearchPage.getSearchInputValue();         
+              searchInputValue.should.equal('vinyl');                                  // chai.should to check entered value
+              await SearchPage.pressEnter()
+              await browser.pause(5000)
+          })
+      })
 // describe('6. Remove an Item from the Cart', () => {
 //         it('should remove an item from the cart', async () => {
 //             await MainPage.open()

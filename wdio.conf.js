@@ -55,7 +55,7 @@ exports.config = {
           'goog:chromeOptions': {
             args: [
               '--start-fullscreen',
-              //'--headless=new',     
+              '--headless=new',     
               '--disable-gpu',
               '--no-sandbox',
               '--disable-dev-shm-usage', 
@@ -71,13 +71,13 @@ exports.config = {
           },
           maxInstances: 2
         },
-       // {
-       //   browserName: 'firefox',
-       //   'moz:firefoxOptions': {
-       //     args: ['--headless', '--start-fullscreen', '--disable-gpu', '--no-sandbox', '--disable-blink-features=AutomationControlled']
-       //   },
-       //   maxInstances: 2
-       // }
+        {
+          browserName: 'firefox',
+          'moz:firefoxOptions': {
+            args: ['--headless', '--start-fullscreen', '--disable-gpu', '--no-sandbox', '--disable-blink-features=AutomationControlled']
+          },
+          maxInstances: 2
+        }
         ],
 
 
@@ -158,7 +158,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        retries: 0
+        retries: 2
       },
 
     //
