@@ -21,7 +21,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        ['./test/specs/**/*.js']
+        ['./test/*.js']
     ],
     // Patterns to exclude.
     exclude: [
@@ -50,33 +50,41 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
+         {
+           browserName: 'chrome',
+           'goog:chromeOptions': {
+             args: [
+               '--start-fullscreen',
+               '--headless=new',     
+               '--disable-gpu',
+               '--no-sandbox',
+               '--disable-dev-shm-usage', 
+               '--disable-features=NetworkService',
+               '--disable-blink-features=AutomationControlled',
+               '--disable-web-security',
+               '--disable-site-isolation-trials',
+                '--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"'
+           ],
+           prefs: {
+             'profile.default_content_setting_values.notifications': 2
+         }
+           },
+           maxInstances: 2
+         },
         {
-          browserName: 'chrome',
-          'goog:chromeOptions': {
-            args: [
-              '--start-fullscreen',
-              '--headless=new',     
-              '--disable-gpu',
-              '--no-sandbox',
-              '--disable-dev-shm-usage', 
-              '--disable-features=NetworkService',
-              '--disable-blink-features=AutomationControlled',
-              '--disable-web-security',
-              '--disable-site-isolation-trials',
-               '--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"'
-          ],
-          prefs: {
-            'profile.default_content_setting_values.notifications': 2
-        }
-          },
-          maxInstances: 2
-        },
-        {
-          browserName: 'firefox',
-          'moz:firefoxOptions': {
-            args: ['--headless', '--start-fullscreen', '--disable-gpu', '--no-sandbox', '--disable-blink-features=AutomationControlled']
-          },
-          maxInstances: 2
+         browserName: 'firefox',
+         'moz:firefoxOptions': {
+           args: 
+           [
+             '--headless',
+             '--start-fullscreen',
+             '--disable-gpu',
+             '--no-sandbox', 
+             '--disable-blink-features=AutomationControlled',
+             '--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"'
+           ]
+         },
+         maxInstances: 2
         }
         ],
 
@@ -158,7 +166,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        retries: 2
+        retries: 0
       },
 
     //
