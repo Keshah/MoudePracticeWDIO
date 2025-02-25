@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run API tests') {
             steps {
-                 'npx newman run test/trello_collection.json'
+                 bat 'npx newman run test/trello_collection.json'
             }
         }
     }
