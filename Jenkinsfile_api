@@ -1,19 +1,22 @@
 pipeline {
     agent any
-     stages {
+
+    stages {
         stage('Clone repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Keshah/MoudePracticeWDIO.git'
+                git 'https://github.com/Keshah/MoudePracticeWDIO.git'
             }
         }
+
         stage('Install dependencies') {
             steps {
                 bat 'npm install'
             }
         }
+
         stage('Run API tests') {
             steps {
-                 bat 'newman run test/trello_collection.json'
+                bat 'npx newman run test/trello_collection.json'
             }
         }
     }
