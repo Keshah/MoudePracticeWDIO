@@ -18,6 +18,7 @@
     "@wdio/visual-service": "^6.3.1",
     "chromedriver": "^132.0.2",
     "geckodriver": "^5.0.0",
+    "newman": "^6.2.1",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-geckodriver-service": "^5.0.2",
     "wdio-wait-for": "^3.0.11"
