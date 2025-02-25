@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Run API tests') {
             steps {
-                sh 'newman run postman_collection.json'
+                bat 'newman run postman_collection.json'
             }
         }
     }
