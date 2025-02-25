@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    stages {
+     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/Keshah/MoudePracticeWDIO.git'
+                git branch: 'main', url: 'https://github.com/Keshah/MoudePracticeWDIO.git'
             }
         }
         stage('Install dependencies') {
