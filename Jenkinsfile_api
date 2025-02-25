@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run API tests') {
             steps {
-                bat 'newman run postman_collection.json'
+                 bat 'newman run test/trello_collection.json'
             }
         }
     }
