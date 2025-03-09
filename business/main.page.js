@@ -1,9 +1,9 @@
-const BasePage = require("../core/base.page")
+const BasePage = require("../core/base.page");
 
 class MainPage extends BasePage {
-    async open() {
-        await super.open('https://www.htfr.com/');
-    }
+  async open() {
+    await super.open("https://www.htfr.com/");
+  }
 }
 
 module.exports = new MainPage();

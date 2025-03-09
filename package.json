@@ -5,12 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run wdio.conf.js",
-    "test:api": "newman run ./test/trello_collection.json"
+    "test:api": "newman run ./test/trello_collection.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
     "@rpii/wdio-html-reporter": "^7.7.1",
     "@wdio/cli": "^9.7.2",
     "@wdio/local-runner": "^9.7.2",
@@ -18,8 +22,11 @@
     "@wdio/spec-reporter": "^9.10.1",
     "@wdio/visual-service": "^6.3.1",
     "chromedriver": "^132.0.2",
+    "eslint": "^9.22.0",
     "geckodriver": "^5.0.0",
+    "globals": "^16.0.0",
     "newman": "^6.2.1",
+    "prettier": "3.5.3",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-geckodriver-service": "^5.0.2",
     "wdio-html-nice-reporter": "^8.1.7",

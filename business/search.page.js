@@ -1,4 +1,4 @@
-const BasePage = require('../core/base.page');
+const BasePage = require("../core/base.page");
 
 class SearchPage extends BasePage {
   get searchInput() {
@@ -15,7 +15,7 @@ class SearchPage extends BasePage {
   }
 
   async pressEnter() {
-    await browser.keys('Enter');
+    await browser.keys("Enter");
   }
 }
 

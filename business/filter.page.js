@@ -1,12 +1,14 @@
-const BasePage = require('../core/base.page');
-const { $, expect } = require('@wdio/globals');
+const BasePage = require("../core/base.page");
+const { $, expect } = require("@wdio/globals");
 
 class FilterPage extends BasePage {
   /**
    * Переходит на страницу фильтров, нажимая на ссылку фильтра по жанрам.
    */
   async goToFilters() {
-    const filtersLink = $('a[href="/catalog/category/view/s/genres/id/3/?product_list_order=news_from_date&product_list_dir=desc"]');
+    const filtersLink = $(
+      'a[href="/catalog/category/view/s/genres/id/3/?product_list_order=news_from_date&product_list_dir=desc"]',
+    );
     await filtersLink.waitForDisplayed({ timeout: 10000 });
     await filtersLink.click();
 

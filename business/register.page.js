@@ -1,5 +1,5 @@
-const BasePage = require('../core/base.page');
-const { $, expect } = require('@wdio/globals');
+const BasePage = require("../core/base.page");
+const { $, expect } = require("@wdio/globals");
 
 class RegisterPage extends BasePage {
   get inputFirstname() {
@@ -37,11 +37,11 @@ class RegisterPage extends BasePage {
 
   /**
    * Fill the form
-   * @param {string} firstName 
-   * @param {string} lastName 
-   * @param {string} email 
-   * @param {string} password 
-   * @param {string} confPassword 
+   * @param {string} firstName
+   * @param {string} lastName
+   * @param {string} email
+   * @param {string} password
+   * @param {string} confPassword
    */
   async register(firstName, lastName, email, password, confPassword) {
     await this.inputFirstname.waitForDisplayed({ timeout: 10000 });
